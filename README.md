@@ -13,11 +13,11 @@
 - For publicly available dataset (D5), the model showed 0.909 of AUROC and 0.958 of PRAUC (Supplementary data 1).
 
 Figure 1. Shell types of classification performance. A) ROC curve for Canon dataset; B) PR curve for Canon dataset; C) ROC curve for GE dataset; D) PR curve for GE dataset
-![Figure 1](data/readme/figure1.png)
+<img src="data/readme/figure1.png" width="500">
 
 Supplementary figure 1. Shell types of classification performance. A) ROC curve for publicly available dataset; B) PR curve for publicly available dataset
 
-![Supplementary Figure 1](data/readme/supplementary_figure_1.png)
+<img src="data/readme/supplementary_figure_1.png" width="500">
 
 
 ### Quantitative validation
@@ -26,7 +26,8 @@ Supplementary figure 1. Shell types of classification performance. A) ROC curve 
 - For each individual case, the confidence for the texture shell type remained at 0.993 even when 80% of less contributing pixels were masked. 
 
 Figure 2. Performance deterioration depends on masking non-contributing to prediction. A) Left. ROC curve for test dataset in Canon dataset; Right. PR curve for test dataset in Canon dataset; B) Texture shell implant prediction in Canon dataset (D1) by increasing the number of lower contributing pixels by 10%; C) Texture shell implant prediction in ruptured implant dataset (D3) by increasing the number of lower contributing pixels by 10%.
-![alt text](data/readme/figure2.png)
+
+<img src="data/readme/figure2.png" width="700">
 
 
 ### Uncertainty estimation
@@ -36,7 +37,8 @@ Figure 2. Performance deterioration depends on masking non-contributing to predi
 - The model also predicted statistically significant high for the absent of implant image than for ruptured implant images (mean [SD], 0.777 [0.199] vs 0.371 [0.318]; p<.001) (Figure 3).
 
 Figure 3. Entropy distribution of prediction from test in all datasets.
-![alt text](data/readme/figure3.png)
+
+<img src="data/readme/figure3.png" width="500">
 
 
 ### Individual case review
