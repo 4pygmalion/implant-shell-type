@@ -1,5 +1,5 @@
 # Developing a deep learning model to predict the breast implant texture types with ultrasonographic image: feasibility study 
-- Ho Heon Kim, MS.1; Won Chan Jeong2;  Kyungran Pi, MS.,2 ; *Jae Hong Kim, M.D.,3
+- Ho Heon Kim, MS.1; Won Chan Jeong2;  Kyungran Pi, MS.,3 ; *Jae Hong Kim, M.D.,4
 1. Department of Biomedical Informatics, Medical School of Yonsei University, Seoul
 2. 3Billion, Inc, Seoul, South Korea
 3. Qauntic EMBA
