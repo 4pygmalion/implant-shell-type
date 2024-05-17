@@ -3,7 +3,7 @@
 [![DOI](https://img.shields.io/badge/DOI-10.2196/preprints.58776-blue)](https://doi.org/10.2196/preprints.58776)
 
 - Ho Heon Kim, MS.1; Won Chan Jeong2;  Kyungran Pi, MS.,3 ; *Jae Hong Kim, M.D.,4
-1. Department of Biomedical Informatics, Medical School of Yonsei University, Seoul
+1. Seegene medical foundation, Seoul
 2. 3Billion, Inc, Seoul, South Korea
 3. Qauntic EMBA
 4. THE W Clinic, Seoul, Korea
