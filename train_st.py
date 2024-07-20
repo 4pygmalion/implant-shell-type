@@ -23,6 +23,8 @@ from torchvision.models import (
     ResNet50_Weights,
     resnet50,
     efficientnet_b4,
+    vit_b_16,
+    ViT_B_16_Weights,
     EfficientNet_B4_Weights,
 )
 from sklearn.model_selection import train_test_split, StratifiedKFold
@@ -53,6 +55,9 @@ def get_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--run_name", type=str, default="default")
+    parser.add_argument(
+        "--model_name", type=str, choices=["vit-b-16", "resnet50"], required=True
+    )
     parser.add_argument("--batch_size", type=int, default=32)
     parser.add_argument("--num_epochs", type=int, default=16)
     parser.add_argument("--lr", type=float, default=1e-4)
@@ -62,9 +67,14 @@ def get_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def model_build() -> torch.nn.Module:
-    model = resnet50(weights=ResNet50_Weights.DEFAULT)
-    model.fc = torch.nn.Linear(in_features=model.fc.in_features, out_features=1)
+def model_build(model_name) -> torch.nn.Module:
+    if model_name == "resnet50":
+        model = resnet50(weights=ResNet50_Weights.DEFAULT)
+        model.fc = torch.nn.Linear(in_features=model.fc.in_features, out_features=1)
+
+    elif model_name == "vit-b-16":
+        model = vit_b_16(ViT_B_16_Weights.DEFAULT)
+        model.heads = torch.nn.Linear(in_features=768, out_features=1)
     # model = efficientnet_b0(weights=EfficientNet_B0_Weights.DEFAULT)
     # model.classifier[1] = torch.nn.Linear(in_features=1280, out_features=1)
     # model = efficientnet_b4(weights=EfficientNet_B4_Weights.DEFAULT)
@@ -190,7 +200,7 @@ if __name__ == "__main__":
                     num_workers=ARGS.num_workers,
                 )
 
-                model = model_build()
+                model = model_build(ARGS.model_name)
                 weighted_bce = partial(
                     torch.nn.functional.binary_cross_entropy_with_logits,
                     weight=torch.tensor(
